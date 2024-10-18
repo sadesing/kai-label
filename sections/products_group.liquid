@@ -1,0 +1,56 @@
+{%- assign collection = collections[section.settings.collection] -%}
+<section class="products-group-section">
+  <h2>{{ collection.title }}</h2>
+  <div class="container">
+    <div class="row">
+      {% for product in collection.products limit: section.settings.max_products %}
+      <div class="col-md-6 col-lg-3">
+        <a href="#" class="product-bg">
+          <img src="{{ product.featured_image | img_url: '350x'}}" class="product-img">
+
+          <div class="overlay">
+            <span class="product-title">{{product.title}}</span>
+            <span class="product-price">{{ product.price | money_with_currency }}</span>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    
+
+    </div>
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Horizontal Sale",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection",
+      "info": "Choose a collection"
+    },
+    {
+      "type": "text",
+      "id": "max_products",
+      "label": "Maximum Amount Of Products",
+      "default": "4"
+    },
+    {
+      "type": "color",
+      "id": "product_info_bg_color",
+      "label": "Product Info BG",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Products Group",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}

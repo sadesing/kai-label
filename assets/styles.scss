@@ -1,0 +1,693 @@
+@import "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap";
+
+@font-face {
+  font-family: "Bembo Book";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/bembo_book/bembobook_n4.8da691c1d96e22b482c66684b2147e382b6f8d3a.woff2?&hmac=ddfe9f785902286352f25be62c9d69fb78c6883fa8a725c6b505693565714456") format("woff2"),
+    url("https://fonts.shopifycdn.com/bembo_book/bembobook_n4.570284734f42a26c330fca9503f1e2e831cd33ea.woff?&hmac=687f33ff4431a9df0cbde9ef4d53fb56133cb4524934b51eaf7d5634b3f0acdf") format("woff");
+}
+
+@font-face {
+  font-family: Abel;
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/abel/abel_n4.2b4bc5e26465e4423e1674428c5593b0074dff23.woff2?&hmac=307e941d833d482dcfb05c3e2cfd5b6386ed5b184eab986397d4cc8eff437424") format("woff2"),
+    url("https://fonts.shopifycdn.com/abel/abel_n4.0ee737a0dba62c4db0b41249f4fa9e628bc93fa3.woff?&hmac=e942ed2639708e9395e5da6260ced8b2d0b2849c90dde8108e946c9e3cc51c14") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 800;
+  font-style: normal;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n7.8cfc646eab1e39e2d81a26284624600ccae49d55.woff2?&hmac=483950e1b5a4c701731c51c7d599e7e521b6687653632dd49172c3a632be4fec") format("woff2"),
+    url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n7.25b10f8089bc87dfd8e50a7c68b433da7a04bc87.woff?&hmac=949a47f28226694553f4530022fc5bfa1066a050f0a1dc68177b93ec8c81ef8e") format("woff");
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-family: "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  background: #f4f7fd;
+  overflow: hidden;
+  width: 100vw;
+  overflow-y: scroll;
+}
+body {
+  font-family: "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  background: #f4f7fd;
+  overflow: hidden;
+  width: 100vw;
+  overflow-y: scroll;
+}
+h1 {
+  font-family: "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  line-height: 1;
+  color: #1b1b1b;
+}
+h2 {
+  font-family: "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
+  color: #1b1b1b;
+}
+h3 {
+  font-family: "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
+  color: #1b1b1b;
+}
+h4 {
+  font-family: "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
+  color: #1b1b1b;
+}
+h5 {
+  font-family: "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
+  color: #1b1b1b;
+}
+h6 {
+  font-family: "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
+  color: #1b1b1b;
+}
+p {
+  font-family: Abel, "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
+  color: #1b1b1b;
+}
+span {
+  font-family: Abel, "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+  margin: 0;
+  line-height: 1;
+}
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding: 0 10%;
+  z-index: 10;
+
+  .logo {
+    a {
+      font-weight: 600;
+      font-size: 2rem;
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+  .menu {
+    display: flex;
+    margin-bottom: 0;
+
+    .open-mobile-menu {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      font-weight: 400;
+      text-decoration: none;
+      color: white;
+      text-transform: uppercase;
+    }
+    .link {
+      padding: 20px;
+
+      .site-header__cart {
+        padding: 0;
+      }
+      .site-header__cart-count {
+        right: -4px;
+        top: -3px;
+      }
+    }
+    .dropdown {
+      position: relative;
+      &:hover {
+        .sub-menu {
+          display: block;
+        }
+      }
+      .sub-menu {
+        &:hover {
+          display: block;
+        }
+        display: none;
+        position: absolute;
+        transform: translate3d(0, 10px, 0);
+        background: rgb(10, 10, 10);
+        color: #dddfe4;
+        border-radius: 3px;
+
+        a {
+          color: #dddfe4;
+          display: block;
+          padding: 5px;
+          text-align: center;
+        }
+
+        .sub-link {
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+  .menu.mobile-mode {
+    .link {
+      display: none;
+    }
+    .open-mobile-menu {
+      display: block;
+      color: white;
+      display: block;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  }
+}
+.jumbo-section {
+  background: black;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  margin-bottom: 25px;
+  overflow: hidden;
+
+  .bg-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+  }
+  .bg-video {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    transform: scale(1.5);
+  }
+  .transparent-color {
+    background: rgba(66, 53, 88, 0.8);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+  }
+  .titles {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+
+    h1 {
+      font-size: 7rem;
+      color: #d6b27c;
+      font-weight: 800;
+      text-transform: uppercase;
+      transform: translate3d(100px, 0, 0);
+    }
+    h2 {
+      font-size: 4.5rem;
+      color: white;
+      font-weight: 100;
+      text-transform: uppercase;
+      transform: translate3d(150px, 0, 0);
+    }
+  }
+  .state {
+    background: white;
+    position: absolute;
+    height: 12%;
+    z-index: 3;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+
+    .number {
+      font-size: 5rem;
+      font-weight: 400;
+      transform: translate3d(50px, 0, 0);
+    }
+  }
+  .store-info {
+    background: #d6b27c;
+    position: absolute;
+    height: 28%;
+    z-index: 3;
+    width: 75%;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    a {
+      width: 25%;
+      display: inline-block;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        filter: saturate(0%);
+      }
+    }
+  }
+}
+.twoCollections-section {
+  margin-bottom: 25px;
+  overflow: hidden;
+  .left-c {
+    .left-c-img {
+      width: 100%;
+      position: relative;
+      .overlay {
+        position: absolute;
+        width: 100%;
+        opacity: 0.5;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .collection-title {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+      font-size: 32px;
+      font-weight: 900;
+      text-transform: uppercase;
+      span {
+        line-height: 1.3;
+        transform: translate3d(-80px, 50px, 0);
+        text-transform: uppercase;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .right-c {
+    .right-c-bg {
+      background: #dddfe4;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .right-c-img {
+        height: 400px;
+        width: 400px;
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+        .collection-title {
+          span {
+            font-size: 32px;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #1b1b1b;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+.horizontal-sale-section {
+  .overlay {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .percent-number {
+      font-family: "Avenir Next", "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+      color: white;
+      font-size: 12rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .title {
+      font-family: "Avenir Next", "Avenir Next Condensed", "Source Sans Pro", Arial, Helvetica, sans-serif;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 15px;
+      margin-bottom: 1rem;
+    }
+    a {
+      display: block;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 400;
+      line-height: 0.5;
+      padding: 15px 60px;
+      border: 2px solid white;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: #dddfe4;
+        background: #d6b27c;
+      }
+    }
+  }
+}
+.products-group-section {
+  padding: 50px 0 0 0;
+  overflow: hidden;
+  div[class*="col"] {
+    margin-bottom: 50px;
+  }
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 50px;
+  }
+  .product-bg {
+    background: white;
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 50px;
+
+    .product-img {
+      width: 80%;
+    }
+    .overlay {
+      background: #1b1b1b;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: all 0.2s ease-in-out;
+      opacity: 0;
+      cursor: pointer;
+      color: white;
+      &:hover {
+        opacity: 1;
+      }
+      .product-title {
+        font-weight: 400;
+        text-align: center;
+        font-size: 1.3rem;
+      }
+      .product-price {
+        font-weight: 600;
+      }
+    }
+  }
+}
+footer {
+  background: #1b1b1b;
+  padding: 50px 0;
+  overflow: hidden;
+  .footer-menu {
+    .menu-title {
+      color: #d6b27c;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: block;
+    }
+    a {
+      color: white;
+    }
+  }
+  .social-title {
+    color: #d6b27c;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .social-icons {
+    display: flex;
+    li {
+      margin-right: 15px;
+    }
+    a {
+      display: flex;
+      height: 30px;
+      width: 30px;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      text-decoration: none;
+      color: black;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: white;
+        background: #c50000;
+      }
+    }
+  }
+  .address {
+    color: #dddfe4;
+    text-align: center;
+    display: block;
+    width: 100%;
+  }
+}
+.content-wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#mobile-menu {
+  background: #000000;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 20px;
+  display: none;
+  transform: translate3d(-100%, 0, 0);
+  .logo {
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+    a {
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+  .menu {
+    li {
+      padding-top: 20px;
+    }
+    > li {
+      > a {
+        color: #d6b27c;
+        font-size: 1.2rem;
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+    }
+    > li.dropdown {
+      .sub-menu {
+        a {
+          color: white;
+          font-size: 1.2rem;
+          display: inline-block;
+          border-bottom: none;
+          padding: 10px 7px;
+        }
+      }
+    }
+  }
+}
+#mobile-menu.active {
+  display: block;
+}
+.close-mobile-menu {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: -5px;
+  cursor: pointer;
+}
+@media (min-width: 768px) and (max-width: 1280px) {
+  .twoCollections-section {
+    .left-c {
+      .collection-title {
+        span {
+          font-size: 2rem;
+        }
+      }
+    }
+    .right-c {
+      .right-c-bg {
+        .right-c-img {
+          .collection-title {
+            span {
+              font-size: 2rem;
+              transform: translate(-64px, -100px);
+            }
+          }
+        }
+      }
+    }
+  }
+  .horizontal-sale-section {
+    .overlay {
+      .percent-number {
+        font-size: 12rem;
+      }
+    }
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .jumbo-section {
+    .titles {
+      h1 {
+        font-size: 4rem;
+      }
+      h2 {
+        font-size: 2.8rem;
+      }
+    }
+    .state {
+      .number {
+        font-size: 3rem;
+      }
+    }
+  }
+  .twoCollections-section {
+    .left-c {
+      .collection-title {
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .right-c {
+      .right-c-bg {
+        .right-c-img {
+          .collection-title {
+            span {
+              font-size: 1.5rem;
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .horizontal-sale-section {
+    .overlay {
+      .percent-number {
+        font-size: 12rem;
+      }
+    }
+  }
+}
+@media (min-width: 1px) and (max-width: 575px) {
+  .jumbo-section {
+    .titles {
+      h1 {
+        font-size: 2.8rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+        margin-left: -34px;
+      }
+    }
+    .state {
+      .number {
+        font-size: 2rem;
+      }
+    }
+  }
+  .twoCollections-section {
+    .left-c {
+      .collection-title {
+        span {
+          font-size: 1rem;
+        }
+      }
+    }
+    .right-c {
+      .right-c-bg {
+        .right-c-img {
+          .collection-title {
+            span {
+              font-size: 1rem;
+              padding-left: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .horizontal-sale-section {
+    .overlay {
+      .percent-number {
+        font-size: 10rem;
+      }
+    }
+  }
+}

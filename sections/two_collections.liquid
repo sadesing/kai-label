@@ -1,0 +1,81 @@
+{%- assign collection1 = collections[section.settings.collection1] -%}
+{%- assign collection2 = collections[section.settings.collection2] -%}
+<section class="twoCollections-section">
+  <div class="row">
+    <a href="{{collection1.url}}" class="col-md-6 left-c" style="color: {{section.settings.collection1_text_color}}; ">
+      <div class="left-c-img">
+      <div class="overlay" style="background: {{section.settings.collection1_bg_color}};"></div>
+        <img src="{{ collection1.image | img_url: '500x'}}" class="">
+      </div>
+      <span class="collection-title">
+        <span>
+          {{collection1.title}}
+        </span>
+      </span>
+    </a>
+    <a href="{{collection2.url}}" class="col-md-6 right-c" style="color: {{section.settings.collection2_text_color}};">
+    <div class="right-c-bg" style="background: {{section.settings.collection2_bg_color}};">
+        <div class="right-c-img">
+          <img src="{{ collection2.image | img_url: '500x'}}" class="">
+          <span class="collection-title">
+            <span style="color: {{section.settings.collection2_text_color}};">
+              {{collection2.title}}
+            </span>
+          </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+
+{% schema %}
+{
+  "name": "Two Collections",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection1",
+      "label": "Collection 1",
+      "info": "Choose a collection"
+    },
+    {
+      "type": "color",
+      "id": "collection1_bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "collection1_text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "collection",
+      "id": "collection2",
+      "label": "Collection 2",
+      "info": "Choose a collection"
+    },
+    {
+      "type": "color",
+      "id": "collection2_bg_color",
+      "label": "Background Color",
+      "default": "#dddfe4"
+    },
+    {
+      "type": "color",
+      "id": "collection2_text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Collections",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
