@@ -940,15 +940,6 @@ button:-moz-focusring,
   outline: 1px dotted ButtonText;
 }
 
-input {
-  &[type="search"],
-  &[type="number"],
-  &[type="email"],
-  &[type="password"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-}
 
 table {
   width: 100%;
@@ -963,8 +954,6 @@ th {
 
 textarea {
   overflow: auto;
-  -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
 /*============================================================================
@@ -5066,7 +5055,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
 .site-header__search-title {
   @include visually-hidden();
   display: block;
-  vertical-align: middle;
 }
 
 .site-header__cart-title {
@@ -5621,7 +5609,6 @@ $color-blankstate-background: rgba($color-body-text, 0.1);
   .icon {
     display: block;
     height: $icon-size;
-    vertical-align: middle;
   }
 }
 
